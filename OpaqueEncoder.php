@@ -47,15 +47,15 @@ class OpaqueEncoder {
 	/**
 	 * Transcode an integer and return it as a 6-character base64 string.
 	 */
-	public function decodeHex($s) {
-		return $this->transcode(hexdec($s));
+	public function encodeBase64($i) {
+		return strtr(substr(base64_encode(pack('N', $this->transcode($i))), 0, 6), '+/', $this->extraChars);
 	}
-	
+
 	/**
 	 * Decode an 8-character hex string, returning the original integer.
 	 */
-	public function encodeBase64($i) {
-		return strtr(substr(base64_encode(pack('N', $this->transcode($i))), 0, 6), '+/', $this->extraChars);
+	public function decodeHex($s) {
+		return $this->transcode(hexdec($s));
 	}
 	
 	/**
