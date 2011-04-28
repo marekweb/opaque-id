@@ -1,0 +1,29 @@
+Opaque ID test vectors
+2011-04-27
+
+Using key:  0xe39a4b19
+   Clear    Opaque Hex  Opaque Base64
+       0    355d1798    NV0XmA
+       1    2a0ee81e    Kg7oHg
+       2    f81d74fc    .B10-A
+       3    9836bba5    mDa7pQ
+      65    af0f0fad    rw8PrQ
+      66    e66c88c3    5myIww
+      67    65c1bc43    ZcG8Qw
+   51670    bf91bf3d    v5G-PQ
+   51671    0ae655d2    CuZV0g
+   51672    7d6929e8    fWkp6A
+
+
+Using key:  0x3b79db9a
+   Clear    Opaque Hex  Opaque Base64
+       0    7ea0aa7a    fqCqeg
+       1    0ae54fa3    CuVPow
+       2    cbae9d6c    y66dbA
+       3    db2ac148    2yrBSA
+      65    bf11636a    vxFjag
+      66    7b62c4fa    e2LE.g
+      67    8e34b320    jjSzIA
+   51670    5d1421f8    XRQh.A
+   51671    6819dc65    aBncZQ
+   51672    7a2dafc4    ei2vxA
