@@ -1,6 +1,8 @@
 import struct
 import base64
 
+__version__ = '0.0.1'
+
 class OpaqueEncoder:
     """
     Opaque ID encoder.
