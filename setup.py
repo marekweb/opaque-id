@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
  
 setup(
     name='opaque',
-    version=__import__('opaqure').__version__,
+    version=__import__('opaque').__version__,
     description='Obfuscation scheme for integer IDs',
     author='Marek Z.',
     url='http://github.com/marekweb/opaque-id',
