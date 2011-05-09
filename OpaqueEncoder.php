@@ -13,11 +13,16 @@ class OpaqueEncoder {
 	private $key;
 	private $extraChars = '.-';
 	
+	 const ENCODING_INT = 0;
+	 const ENCODING_HEX = 1;
+	 const ENCODING_BASE64 = 2;
+	
 	/**
 	 * @param $key Secret key used for lightweight encryption.
 	 */
-	public function __construct($key) {
+	public function __construct($key, $encoding = self::ENCODING_HEX) {
 		$this->key = $key;
+		$this->encoding = $encoding;
 	}
 	
 	/**
@@ -35,6 +40,40 @@ class OpaqueEncoder {
 		$r = $i & 0xffff;
 		$l = $i >> 16 & 0xffff ^ $this->transform($r);
 		return (($r ^ $this->transform($l)) << 16) + $l;
+	}
+	
+	/**
+	 * Encode a value according to the encoding mode selected upon instantiation.
+	 */
+	public function encode($i) {
+		switch ($this->encoding) {
+			case self::ENCODING_INT:
+				return $this->transcode($i);
+
+			case self::ENCODING_BASE64:
+				return $this->encodeHex($i);
+
+			case self::ENCODING_HEX:
+			default:
+				return $this->encodeHex($i);
+		}
+	}
+	/**
+	 * Decode a value according to the encoding mode selected upon instantiation.
+	 */
+	public function decode($s) {
+		switch ($this->encoding) {
+			case self::ENCODING_INT:
+				return $this->transcode($s);
+
+			case self::ENCODING_BASE64:
+				return $this->decodeHex($s);
+
+			case self::ENCODING_HEX:
+			default:
+				return $this->decodeHex($s);
+
+		}
 	}
 	
 	/**

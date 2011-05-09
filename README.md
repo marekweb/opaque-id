@@ -9,10 +9,10 @@ Here's what Opaque IDs look like:
 
 ```
       ID    Opaque Hex  Opaque Base64
-       0    7ea0aa7a    fqCqeg
-       1    0ae54fa3    CuVPow
-       2    cbae9d6c    y66dbA
-       3    db2ac148    2yrBSA
+       0     7ea0aa7a      fqCqeg
+       1     0ae54fa3      CuVPow
+       2     cbae9d6c      y66dbA
+       3     db2ac148      2yrBSA
 ```
 
 The algorithm is a one-to-one integer mapping (which incorporates a secret key). It's lightweight and compact, at the cost of actual cryptographic security. For real encryption, use a serious encryption algorithm instead (although you won't get such a compact ciphertext). 
@@ -36,11 +36,21 @@ print encoder.decode_base64("2yrBSA")
 # -> 3
 ```
 
+Here's a PHP example
+
+```php
+$encoder = new OpaqueEncoder(0x3b79db9a);
+print $encoder->encode($id); // Default mode is hex
+
+$encoder = new OpaqueEncoder(0x3b79db9a, OpaqueEncoder::ENCODING_BASE64);
+print $encoder->encode($id); // Will use base64 mode
+```
+
 Implementations
 ---------------
 
-* _PHP_: `OpaqueEncoder.php` class
-* _Python_: `opaque.py` module
+* PHP: `OpaqueEncoder.php` class
+* Python: `opaque.py` module
 
 Authors
 -------
