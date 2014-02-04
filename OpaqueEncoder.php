@@ -51,7 +51,7 @@ class OpaqueEncoder {
 				return $this->transcode($i);
 
 			case self::ENCODING_BASE64:
-				return $this->encodeHex($i);
+				return $this->encodeBase64($i);
 
 			case self::ENCODING_HEX:
 			default:
@@ -67,7 +67,7 @@ class OpaqueEncoder {
 				return $this->transcode($s);
 
 			case self::ENCODING_BASE64:
-				return $this->decodeHex($s);
+				return $this->decodeBase64($s);
 
 			case self::ENCODING_HEX:
 			default:
