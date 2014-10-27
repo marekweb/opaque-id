@@ -8,5 +8,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {},
+    "autoload": {
+      "files": ["OpaqueEncoder.php"]
+    }
 }
