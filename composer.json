@@ -1,0 +1,12 @@
+{
+    "name": "marekweb/opaque-id",
+    "description": "Opaque ID: Obfuscation scheme for integer IDs",
+    "authors": [
+        {
+            "name": "Marek",
+            "email": "marek@marekweb.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
