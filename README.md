@@ -46,6 +46,19 @@ $encoder = new OpaqueEncoder(0x3b79db9a, OpaqueEncoder::ENCODING_BASE64);
 print $encoder->encode($id); // Will use base64 mode
 ```
 
+Install the class using composer:
+
+```bash
+composer require marekweb/opaque-id
+```
+
+Then require it with:
+
+```php
+require 'vendor/autoload.php';
+$encoder = new OpaqueEncoder(0x3b79db9a);
+```
+
 Implementations
 ---------------
 
